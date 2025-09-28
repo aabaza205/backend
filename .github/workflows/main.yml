@@ -1,0 +1,22 @@
+name:  Dev CI/CD Pipeline
+on:
+  push: 
+    branches:
+      - main
+
+jobs:
+  CICD:
+    uses: aabaza205/DevOps/.github/workflows/BackEndPipeline.yml@main
+    with: 
+        # Environment
+      APP_ENV: dev
+      AWS_REGION: us-east-1
+      #APPROVAL_EMAIL: mohamed.elmalah@thirdwayv.com,abdulla.okasha@thirdwayv.com
+      # Cluster and ECR
+      ECR_REGISTRY: 651706759165.dkr.ecr.us-east-1.amazonaws.com
+      ECR_REPOSITORY: imperial-brands/application-server
+      ECS_CLUSTER: dev-cluster
+      ECS_SERVICE: dev-app-server-service
+      TASK_DEFINITION: dev-app-server
+      CONTAINER_NAME: app-server
+      DB_NAME: dev-imperial-brands
