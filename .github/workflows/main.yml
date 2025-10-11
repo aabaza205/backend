@@ -9,7 +9,7 @@ on:
 
 jobs:
   CICD:
-    uses: aabaza205/DevOps/.github/workflows/BackEndPipeline.yml@main
+    uses: aabaza205/DevOps/.github/workflows/test_eventname.yaml@main
     with: 
         # Environment
       APP_ENV: dev
